@@ -4,11 +4,15 @@ A small Monte Carlo simulation that shows **why models overfit** and what we can
 
 Real data comes from an unknown process. Here the true function is known:
 
-$$X \sim \text{Uniform}(0,1), \qquad Y = \sin(2\pi X) + \varepsilon, \qquad \varepsilon \sim \mathcal N(0, \sigma^2)$$
+```math
+X \sim \text{Uniform}(0,1), \qquad Y = \sin(2\pi X) + \varepsilon, \qquad \varepsilon \sim \mathcal{N}(0, \sigma^2)
+```
 
 Because the truth is known, the simulation can draw hundreds of independent training sets and refit the model on each one. That lets it **measure** each part of the expected test error directly:
 
-$$\mathbb E\big[(Y - \hat f(X))^2\big] = \underbrace{\big(\mathbb E[\hat f(X)] - f(X)\big)^2}_{\text{bias}^2} + \underbrace{\operatorname{Var}[\hat f(X)]}_{\text{variance}} + \underbrace{\sigma^2}_{\text{noise}}$$
+```math
+\mathbb{E}\big[(Y - \hat f(X))^2\big] = \underbrace{\big(\mathbb{E}[\hat f(X)] - f(X)\big)^2}_{\text{bias}^2} + \underbrace{\mathrm{Var}[\hat f(X)]}_{\text{variance}} + \underbrace{\sigma^2}_{\text{noise}}
+```
 
 ## Results
 
